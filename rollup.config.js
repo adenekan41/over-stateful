@@ -5,7 +5,7 @@ import multiInput from 'rollup-plugin-multi-input';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-	input: ['src/**/*.js', 'src/helpers/**/*.js'],
+	input: ['src/**/*.js', 'src/components/**/*.js'],
 	output: [
 		{
 			dir: 'bundle-es',
@@ -20,7 +20,7 @@ export default {
 			name: 'bundle',
 			plugins: [
 				terser({
-					include: ['helpers/**/*.js'],
+					include: ['components/**/*.js'],
 					exclude: ['index.js'],
 				}),
 			],
