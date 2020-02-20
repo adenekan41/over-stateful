@@ -2,17 +2,19 @@ import dispatch from './dispatch';
 import provider from './provider';
 import getState from './get-state';
 import thunk from './thunk';
+import store from './store';
 
-const createStore = (reducer, initialState = {}) => {
+export const createStore = (reducer, initialState = {}) => {
+  store.reducer = reducer;
   store.state = initialState;
   store.listeners = [];
-  store.dispatch = () => dispatch(reducer);
+  store.dispatch = action => {
+    store.state = reducer(store.state, action);
+    store.listeners.forEach(listener => listener());
+  };
   store.provider = listners => provider(listners);
-  dispatch({});
   store.getState = () => getState();
   store.thunk = () => thunk();
 
   return store;
 };
-
-export default createStore;

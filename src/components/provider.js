@@ -1,7 +1,10 @@
+import store from './store';
+
 const provider = listener => {
-  listeners.push(listener);
+  store.listeners = [];
+  store.listeners.push(listener);
   return () => {
-    listeners.filter(lis => lis !== listener);
+    store.listeners.filter(lis => lis !== listener);
   };
 };
 
