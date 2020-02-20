@@ -1,6 +1,6 @@
 import dispatch from './dispatch';
 import dispatch from './dispatch';
-import subscribe from './subscribe';
+import provider from './provider';
 import getState from './get-state';
 import thunk from './thunk';
 
@@ -8,7 +8,8 @@ const createStore = (reducer, initialState = {}) => {
 	store.state = initialState;
 	store.listeners = [];
 	store.dispatch = () => dispatch(reducer);
-	store.subscribe = listners => subscribe(listners);
+	store.provider = listners => provider(listners);
+	dispatch({});
 	store.getState = () => getState();
 	store.thunk = () => thunk();
 
