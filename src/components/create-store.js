@@ -1,24 +1,18 @@
-const createStore = (reducer, initialState = {}) => {
-	const handler = {
-		get: function(obj, prop) {
-			return prop in obj ? obj[prop] : 'state';
-		},
-	};
+import dispatch from './dispatch';
+import dispatch from './dispatch';
+import subscribe from './subscribe';
+import getState from './get-state';
+import thunk from './thunk';
 
-	const store = new Proxy({}, handler);
+const createStore = (reducer, initialState = {}) => {
 	store.state = initialState;
 	store.listeners = [];
-
-	store.getState = () => store.state;
-
-	store.subscribe = listener => {
-		store.listeners.push(listener);
-	};
-
-	store.dispatch = action => {
-		store.state = reducer(store.state, action);
-		store.listeners.forEach(listener => listener());
-	};
+	store.dispatch = () => dispatch(reducer);
+	store.subscribe = listners => subscribe(listners);
+	store.getState = () => getState();
+	store.thunk = () => thunk();
 
 	return store;
 };
+
+export default createStore;
