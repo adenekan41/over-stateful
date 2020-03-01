@@ -5,7 +5,7 @@ import multiInput from 'rollup-plugin-multi-input';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: ['src/**/*.js', 'src/components/**/*.js'],
+  input: ['src/**/*.js', 'src/core/**/*.js'],
   output: [
     {
       dir: 'bundle-es',
@@ -20,16 +20,22 @@ export default {
       name: 'bundle',
       plugins: [
         terser({
-          include: ['components/**/*.js'],
+          include: ['core/**/*.js'],
           exclude: ['index.js'],
         }),
       ],
     },
     {
-      name: 'overStateful',
+      name: 'bundle',
       dir: 'bundle-umd',
-      format: 'iife',
+      format: 'esm',
       exports: 'named',
+      plugins: [
+        terser({
+          include: ['core/**/*.js'],
+          exclude: ['index.js'],
+        }),
+      ],
       globals: {
         react: 'React',
       },
@@ -54,7 +60,8 @@ export default {
         'node_modules/react/index.js': [
           'createElement',
           'createContext',
-          'Component',
+          'useContext',
+          'useReducer',
         ],
       },
     }),
