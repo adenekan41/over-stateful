@@ -16,7 +16,7 @@ function reduceState(reducers, state, action) {
   );
 }
 
-export function useOverProvider({ initialState, reducers }) {
+export function useOverProvider({ initialState, reducers, middleware = [] }) {
   const [state, _dispatch] = useReducer(
     (state, action) => reduceState(reducers, state, action),
     initialState
@@ -27,9 +27,7 @@ export function useOverProvider({ initialState, reducers }) {
       return action(dispatch, state);
     }
 
-    if (null) {
-      _dispatch(action);
-    }
+    return _dispatch(action);
   }
 
   return { state, dispatch };
