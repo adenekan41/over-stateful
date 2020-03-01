@@ -1,15 +1,15 @@
 {
   "name": "@adenekan41/over-stateful",
   "license": "MIT",
-  "version": "0.0.5-beta-2",
+  "version": "0.0.6-beta-2",
   "repository": "git://github.com/adenekan41/over-stateful.git",
-  "description": "A small state management tool that gives you the syntax of MOBX and the power of redux",
+  "description": "A small state management with less setup and super scalability in your react app.",
   "author": "Adenekan Wonderful <hellocodewonders@gmail.com> (https://codewonders.dev)",
-  "main": "bundle-cjs/index.js",
+  "main": "bundle-es/index.js",
   "module": "bundle-es/index.js",
   "jsnext:main": "bundle-es/index.js",
   "scripts": {
-    "flush": "rm -rf bundle-cjs && rm -rf bundle-es",
+    "flush": "rm -rf bundle-cjs && rm -rf bundle-es && rm -rf bundle-umd",
     "build": "yarn flush && rollup -c",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
@@ -26,7 +26,17 @@
     "core-js": "^3.3.4",
     "rollup-plugin-node-resolve": "^4.2.3"
   },
-
+  "bundlesize": [
+    {
+      "path": "bundle-cjs/**/*.js"
+    },
+    {
+      "path": "bundle-es/**/*.js"
+    },
+    {
+      "path": "bundle-umd/**/*.js"
+    }
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
