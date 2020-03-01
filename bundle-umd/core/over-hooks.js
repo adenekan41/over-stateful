@@ -1,1 +1,0 @@
-import{r as t,a as e,O as r}from"../overstateful-f3369906.js";const s=({initialState:e,reducers:r})=>{const[s,a]=t((t,e)=>r.reduce((t,r)=>r(t,e)||t,t),e);return{state:s,dispatch:function t(e){return"function"==typeof e&&e?e(t,s):a(e)}}},a=(t,s)=>{const{state:a,dispatch:n}=e(r);return[t?t(a):a,s?s(n):n]};export{s as useOverProvider,a as useOverState};
