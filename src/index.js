@@ -9,4 +9,5 @@ export * from './core/over-hooks';
 export * from './core/provider';
 
 export { default as store } from './core/store';
-export { default as thunk } from './core/create-store';
+export { default as thunk } from './core/thunk';
+export { default as OverContext } from './core/overstateful';

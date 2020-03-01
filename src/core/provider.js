@@ -7,15 +7,15 @@ import { useOverProvider } from './over-hooks';
 export const OverConsumer = OverContext.Consumer;
 
 const OverProvider = ({ initialState, reducers, children }) => {
-  return (
-    <OverContext.Provider
-      value={useOverProvider({
-        initialState,
-        reducers: reducers ? reducers : [],
-      })}
-    >
-      {children}
-    </OverContext.Provider>
+  return React.createElement(
+    OverContext.Provider,
+    {
+      value: useOverProvider({
+        initialState: store.state,
+        reducers: store.reducers ? store.reducers : [],
+      }),
+    },
+    children
   );
 };
 
