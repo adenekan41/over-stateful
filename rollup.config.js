@@ -5,13 +5,19 @@ import multiInput from 'rollup-plugin-multi-input';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
+  external: ['react'],
   input: ['src/**/*.js', 'src/core/**/*.js'],
   output: [
     {
       dir: 'bundle-es',
       format: 'es',
       name: 'bundle',
-      plugins: [terser()],
+      plugins: [
+        terser({
+          include: ['core/**/*.js'],
+          exclude: ['index.js'],
+        }),
+      ],
     },
     {
       dir: 'bundle-cjs',
@@ -51,19 +57,6 @@ export default {
       main: true,
       browser: true,
     }),
-    commonjs({
-      include: 'node_modules/**',
-      // left-hand side can be an absolute path, a path
-      // relative to the current directory, or the name
-      // of a module in node_modules
-      namedExports: {
-        'node_modules/react/index.js': [
-          'createElement',
-          'createContext',
-          'useContext',
-          'useReducer',
-        ],
-      },
-    }),
+    commonjs(),
   ],
 };

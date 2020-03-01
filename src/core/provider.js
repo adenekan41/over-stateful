@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import OverContext from './overstateful';
 import { useOverProvider } from './over-hooks';
@@ -17,10 +16,4 @@ export const OverProvider = ({ store, children }) => {
     },
     children
   );
-};
-
-OverProvider.propTypes = {
-  initialState: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  reducers: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
 };
