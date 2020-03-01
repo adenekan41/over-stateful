@@ -10,7 +10,7 @@
   "jsnext:main": "bundle-es/index.js",
   "scripts": {
     "flush": "rm -rf bundle-cjs && rm -rf bundle-es && rm -rf bundle-umd",
-    "build": "yarn flush && rollup -c",
+    "build": "yarn flush && rollup -c && bundlesize",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "devDependencies": {
@@ -42,7 +42,8 @@
   },
   "files": [
     "bundle-es",
-    "bundle-cjs"
+    "bundle-cjs",
+    "bundle-umd"
   ],
   "keywords": [
     "javascript",

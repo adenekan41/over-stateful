@@ -1,24 +1,13 @@
 import { useContext, useReducer } from 'react';
 import OverContext from './overstateful';
 
-export function useOverState(mapOverState, mapOverDispatch) {
-  const { state, dispatch } = useContext(OverContext);
-  return [
-    mapOverState ? mapOverState(state) : state,
-    mapOverDispatch ? mapOverDispatch(dispatch) : dispatch,
-  ];
-}
-
-function reduceState(reducers, state, action) {
-  return reducers.reduce(
-    (nextState, reducer) => reducer(nextState, action) || nextState,
-    state
-  );
-}
-
-export function useOverProvider({ initialState, reducers, middleware = [] }) {
+export const useOverProvider = ({ initialState, reducers }) => {
   const [state, _dispatch] = useReducer(
-    (state, action) => reduceState(reducers, state, action),
+    (state, action) =>
+      reducers.reduce(
+        (nextState, reducer) => reducer(nextState, action) || nextState,
+        state
+      ),
     initialState
   );
 
@@ -31,4 +20,12 @@ export function useOverProvider({ initialState, reducers, middleware = [] }) {
   }
 
   return { state, dispatch };
-}
+};
+
+export const useOverState = (mapOverState, mapOverDispatch) => {
+  const { state, dispatch } = useContext(OverContext);
+  return [
+    mapOverState ? mapOverState(state) : state,
+    mapOverDispatch ? mapOverDispatch(dispatch) : dispatch,
+  ];
+};
