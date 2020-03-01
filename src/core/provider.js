@@ -6,7 +6,7 @@ import { useOverProvider } from './over-hooks';
 
 export const OverConsumer = OverContext.Consumer;
 
-const OverProvider = ({ initialState, reducers, children }) => {
+export const OverProvider = ({ store, children }) => {
   return React.createElement(
     OverContext.Provider,
     {
@@ -24,4 +24,3 @@ OverProvider.propTypes = {
   reducers: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
 };
-export default OverProvider;

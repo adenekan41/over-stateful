@@ -1,7 +1,7 @@
 {
-  "name": "@adenekan41/over-stateful",
+  "name": "over-stateful",
   "license": "MIT",
-  "version": "0.0.6-beta-2",
+  "version": "0.0.7-beta-2",
   "repository": "git://github.com/adenekan41/over-stateful.git",
   "description": "A small state management with less setup and super scalability in your react app.",
   "author": "Adenekan Wonderful <hellocodewonders@gmail.com> (https://codewonders.dev)",
@@ -38,9 +38,6 @@
       "path": "bundle-umd/**/*.js"
     }
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "files": [
     "bundle-es",
     "bundle-cjs",
