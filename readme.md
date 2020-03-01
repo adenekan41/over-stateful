@@ -3,7 +3,8 @@
 # Over Stateful [![npm](https://badge.fury.io/js/over-stateful.svg)](https://www.npmjs.com/package/over-stateful)
 
 [![NPM](https://nodei.co/npm/over-stateful.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/over-stateful/)
-🦍A small state management with less setup and super scalability in your react
+
+🐺A small state management with less setup and super scalability in your react
 app.
 
 <!-- useState, but simplified for complex states in React apps. -->
