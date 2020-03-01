@@ -25,6 +25,15 @@ export default {
         }),
       ],
     },
+    {
+      name: 'overStateful',
+      dir: 'bundle-umd',
+      format: 'iife',
+      exports: 'named',
+      globals: {
+        react: 'React',
+      },
+    },
   ],
   plugins: [
     multiInput(),

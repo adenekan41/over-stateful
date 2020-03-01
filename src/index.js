@@ -4,10 +4,10 @@
  * Released under the MIT License.
  */
 
-export * from './components/create-store';
+export * from './core/create-store';
 
-export { default as dispatch } from './components/dispatch';
-export { default as getState } from './components/get-state';
-export { default as provider } from './components/provider';
-export { default as store } from './components/store';
-export { default as thunk } from './components/thunk';
+export { default as dispatch } from './core/dispatch';
+export { default as getState } from './core/get-state';
+export { default as provider } from './core/provider';
+export { default as store } from './core/store';
+export { default as thunk } from './core/thunk';
