@@ -12,7 +12,7 @@ app.
 ## ✨ Features
 
 - 😎 Easy to learn
-- 📦 ~230kb (unpacked)
+- 📦 ~590b (gzipped)
 - 🔥 Easy to scale
 - 🙅‍♂️ Zero dependencies
 - ✂️ Super-flexible API
