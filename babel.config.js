@@ -1,22 +1,23 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-
-export default {
-  input: './src/main.js',
-  output: {
-    file: './build/bundle.min.js',
-    format: 'iife',
-    name: 'bundle',
-    globals: {
-      lodash: '_',
+module.exports = {
+  env: {
+    test: {
+      presets: [
+        '@babel/env',
+        {
+          spec: true,
+          modules: false,
+          forceAllTransforms: true,
+          useBuiltIns: 'usage',
+          targets: {
+            esmodules: true,
+            browsers: true,
+          },
+        },
+        '@babel/react',
+      ],
+      plugins: ['@babel/plugin-transform-runtime'],
     },
   },
-  plugins: [
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    resolve(),
-    commonjs(),
-  ],
+  presets: [['@babel/env', { loose: true, modules: false }]],
+  plugins: ['@babel/plugin-proposal-object-rest-spread'],
 };
