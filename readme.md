@@ -75,20 +75,50 @@ export default function Root() {
 }
 ```
 
-## 👀 Comparison with other state management (examples)
+## Comparison with other state management (examples)
 
 With other state mannagement, setup and learning curve is a lot harder and bent
 you'd have to call/read `documentations` over and over again ..... For example:
 
+- Redux state managment
+- Easy State
+- Mobx e.t.c
+
+Meanwhile, with `over-stateful`, all you need is this, less documentation
+required to get you going...
+
 ```jsx
 import React from 'react';
+import { OverProvider, createStore } from 'over-stateful';
+import { countReducer } from './store';
+import App from './App';
+
+const store = createStore({ count: 0 }, [countReducer]);
+export default function Root() {
+  return (
+    <OverProvider store={store}>
+      <App />
+    </OverProvider>
+  );
+}
 ```
 
-Meanwhile, with `over-stateful`, all you need is ...
+`App.js`
 
 ```jsx
-function () {
-}
+import React from 'react';
+import { useOverState } from 'over-stateful';
+
+const App = () => {
+  const [state, dispatch] = useOverState();
+  return (
+    <>
+      {count}
+      <button onClick={() => dispatch(addOne())}> +1 </button>
+      <button onClick={() => dispatch(minusOne())}> -1 </button>
+    </>
+  );
+};
 ```
 
 ✨

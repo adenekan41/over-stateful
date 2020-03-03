@@ -10,27 +10,11 @@ import OverContext from './overstateful';
 export const useOverProvider = ({ initialState, reducers }) => {
   const [state, _dispatch] = useReducer(
     (state, action) =>
-      reducers.reduce(
-        (nextState, reducer) => reducer(nextState, action) || nextState,
-        state
-      ),
+      reducers.reduce((acc, reducer) => reducer(acc, action) || acc, state),
     initialState
   );
 
-  /**
-   *
-   * @param {*} action
-   */
-
-  function dispatch(action) {
-    if (typeof action === 'function' && action) {
-      return action(dispatch, state);
-    }
-
-    return _dispatch(action);
-  }
-
-  return { state, dispatch };
+  return { state, dispatch: _dispatch };
 };
 
 /**
