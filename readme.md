@@ -115,7 +115,7 @@ const App = () => {
   const [state, dispatch] = useOverState();
   return (
     <>
-      {count}
+      {state.count}
       <button onClick={() => dispatch(addOne())}> +1 </button>
       <button onClick={() => dispatch(minusOne())}> -1 </button>
     </>
