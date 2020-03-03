@@ -1,4 +1,4 @@
-![Codewonders](https://i.ibb.co/27nrGK1/overstateful-1.png)
+![Codewonders](https://i.ibb.co/vwXydQy/Group-1-1.png)
 
 # Over Stateful [![npm](https://badge.fury.io/js/over-stateful.svg)](https://www.npmjs.com/package/over-stateful)
 
@@ -8,6 +8,8 @@
 app.
 
 <!-- useState, but simplified for complex states in React apps. -->
+
+### [Demo](https://codesandbox.io/s/overstatful-demo-7wtpn?fontsize=14&hidenavigation=1&theme=dark)
 
 ## ✨ Features
 

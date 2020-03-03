@@ -1,7 +1,7 @@
 {
   "name": "over-stateful",
   "license": "MIT",
-  "version": "0.0.9",
+  "version": "0.0.9-beta.1",
   "repository": "git://github.com/adenekan41/over-stateful.git",
   "description": "A small state management with less setup and super scalability in your react app.",
   "author": "Adenekan Wonderful <hellocodewonders@gmail.com> (https://codewonders.dev)",
@@ -27,7 +27,8 @@
     "core-js": "^3.3.4",
     "rollup-plugin-node-resolve": "^4.2.3"
   },
-  "bundlesize": [{
+  "bundlesize": [
+    {
       "path": "bundle-cjs/**/*.js"
     },
     {
