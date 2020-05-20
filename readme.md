@@ -1,15 +1,22 @@
-![Codewonders](https://i.ibb.co/vwXydQy/Group-1-1.png)
+<br />
+<p align="center">
+  <img src="https://i.ibb.co/vwXydQy/Group-1-1.png" width="170"/>
+</p>
+<h1 align="center">
+  Over Stateful
+</h1>
+<p align="center">🐺A small state management with less setup and super scalability in your react
+app.</p>
 
-# Over Stateful [![npm](https://badge.fury.io/js/over-stateful.svg)](https://www.npmjs.com/package/over-stateful)
+<br />
+
+[![npm](https://badge.fury.io/js/over-stateful.svg)](https://www.npmjs.com/package/over-stateful)
 
 [![NPM](https://nodei.co/npm/over-stateful.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/over-stateful/)
 
-🐺A small state management with less setup and super scalability in your react
-app.
-
 <!-- useState, but simplified for complex states in React apps. -->
 
-### [Demo](https://codesandbox.io/s/overstatful-demo-7wtpn?fontsize=14&hidenavigation=1&theme=dark)
+### [See Demo On Codesandbox](https://codesandbox.io/s/overstatful-demo-7wtpn?fontsize=14&hidenavigation=1&theme=dark)
 
 ## ✨ Features
 
