@@ -1,7 +1,8 @@
 /**
  *
- * @param {*} cb
- * @param {*} request
+ * @param {Function} cb
+ * @param {Function} request
+ * @callback request
  */
 
 const Async = (cb, request) => {
@@ -9,10 +10,11 @@ const Async = (cb, request) => {
 };
 
 /**
- *
- * @param {*} cb
- * @param {*} request
- * @param {*} delay
+ * Thunk Definition
+ * @param {Function} cb
+ * @param {Function} request
+ * @param {Boolean} delay
+ * @default
  */
 
 const thunk = (cb, request, delay) => {

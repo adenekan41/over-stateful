@@ -2,10 +2,11 @@ import thunk from './thunk';
 import store from './store';
 
 /**
- *
- * @param {*} initialState
- * @param {*} reducers
+ * Create Store Core
+ * @param {Object} initialState
+ * @param {(Object | Array)} reducers
  * @param  {...any} rest
+ * @returns {Object}
  */
 
 const createStore = (initialState = {}, reducers, ...rest) => {
